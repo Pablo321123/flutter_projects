@@ -1,6 +1,6 @@
 # conversor_de_moedas
 
-Um aplicativo capaz de converter moedas em tempo real
+Um aplicativo capaz de converter moedas em tempo real!
 
 ## Getting Started
 
