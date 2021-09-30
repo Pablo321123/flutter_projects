@@ -18,7 +18,7 @@ void main() async {
 Future<Map> getData() async {
   http.Response? response = await http.get(request);
   var arquivoJason = json.decode(response.body)["results"]
-  ["currencies"]; //Convert o Jason em um Map
+      ["currencies"]; //Convert o Jason em um Map
 
   return arquivoJason;
 }
@@ -92,16 +92,17 @@ class _HomeContentState extends State<HomeContent> {
   Widget _buildLoading(String texto) {
     return Center(
         child: Text(
-          texto,
-          style: TextStyle(color: Colors.amber),
-        ));
+      texto,
+      style: TextStyle(color: Colors.amber),
+    ));
   }
 
-  Widget _buildTextField({required String tipoMoeda,
-    required tipoMoedaAbreviado,
-    Color? color,
-    required TextEditingController controlador,
-    Function(String texto)? f}) {
+  Widget _buildTextField(
+      {required String tipoMoeda,
+      required tipoMoedaAbreviado,
+      Color? color,
+      required TextEditingController controlador,
+      Function(String texto)? f}) {
     Function(String texto)? funcao = f ?? (texto) {};
 
     return TextFormField(
@@ -151,9 +152,9 @@ class _HomeContentState extends State<HomeContent> {
               if (snapshot.hasError) {
                 return const Center(
                     child: Text(
-                      "Erro ao Carregar dados!",
-                      style: TextStyle(color: Colors.red),
-                    ));
+                  "Erro ao Carregar dados!",
+                  style: TextStyle(color: Colors.red),
+                ));
               } else {
                 dolar = snapshot.data!["USD"]["buy"];
                 euro = snapshot.data!["EUR"]["buy"];
